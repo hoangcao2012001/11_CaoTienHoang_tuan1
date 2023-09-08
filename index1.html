@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+
+<body>
+
+    <script>
+        let markWeight = 50;
+        let markHeight = 2;
+        let johnWeight = 80;
+        let johnHeight = 1.80;
+
+        let markBMI = markWeight / (markHeight * markHeight);
+        let johnBMI = johnWeight / (johnHeight * johnHeight);
+
+        let markHigherBMI = markBMI > johnBMI;
+
+        console.log("BMI  Mark : " + markBMI);
+        console.log("BMI John : " + johnBMI);
+
+        if (markHigherBMI) {
+            console.log("Mark BMI (" + markBMI + ") cao hơn John: (" + johnBMI + ")");
+        } else {
+            console.log("John BMI (" + johnBMI + ") cao hơn Mark: (" + markBMI + ")");
+        }
+    </script>
+
+</body>
+
+</html>

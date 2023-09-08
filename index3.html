@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung Binh</title>
+</head>
+
+<body>
+
+    <script>
+        const diemDolphins = [96, 108, 89];
+        const diemKoalas = [88, 91, 110];
+
+
+        function tinhDiemTrungBinh(diem) {
+            const tongDiem = diem.reduce((tong, diem) => tong + diem, 0);
+            return tongDiem / 3;
+        }
+
+
+        const diemTrungBinhDolphins = tinhDiemTrungBinh(diemDolphins);
+        const diemTrungBinhKoalas = tinhDiemTrungBinh(diemKoalas);
+
+
+        const diemToiThieu = 100;
+
+        let nguoiChienThang = null;
+
+        if (diemTrungBinhDolphins >= diemToiThieu && diemTrungBinhKoalas >= diemToiThieu) {
+            if (diemTrungBinhDolphins > diemTrungBinhKoalas) {
+                nguoiChienThang = 'Dolphins';
+            } else if (diemTrungBinhKoalas > diemTrungBinhDolphins) {
+                nguoiChienThang = 'Koalas';
+            } else {
+                nguoiChienThang = 'Hòa';
+            }
+        } else {
+            nguoiChienThang = 'Không có người chiến thắng (không đạt điểm tối thiểu)';
+        }
+
+
+        console.log(`Điểm trung bình của Dolphins:` + diemTrungBinhDolphins);
+        console.log(`Điểm trung bình của Koalas: ` + diemTrungBinhKoalas);
+
+        if (nguoiChienThang === 'Hòa') {
+            console.log(`Hòa! Cả hai đội đều có cùng số điểm.`);
+        } else if (nguoiChienThang) {
+            console.log(`${nguoiChienThang} chiến thắng cuộc thi!`);
+        } else {
+            console.log(`Không có người chiến thắng. Không đạt điều kiện điểm tối thiểu.`);
+        }
+    </script>
+
+</body>
+
+</html>
